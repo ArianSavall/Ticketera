@@ -1,0 +1,25 @@
+.hero {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;  
+    font-size: 2em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero .texto-rojo-hero {
+    color: #8f1515;
+}
+
+.hero .texto-negro-hero {
+    color: #000;
+}
+
+.hero .texto-blanco-hero {
+    color: #fff;
+}
+
+
