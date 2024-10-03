@@ -1,11 +1,18 @@
+
+
 <nav class="navbar">
     <ul class="navbar-logo">
-        <li>UNLA Arena</li>
+        <p> 
+          <a href="<?= base_url('home'); ?>"> 
+            <img src= "<?= base_url()?>assets/Imagenes/logo" alt="UNLA ARENA LOGO"   width="100" height="100">
+          </a>
+
+        </p>
     </ul>
     <ul class="navbar-links">
-        <li><a href="<?php echo base_url('home'); ?>">Inicio</a></li>
-        <li><a href="<?php echo base_url('shows'); ?>">Shows</a></li>
-        <li><button class="iniciar-sesion">Iniciar Sesion</button></li>
-        <li><button class="crear-cuenta">Crear Cuenta</button></li>
+        <li><a href="<?= base_url('home'); ?>">Inicio</a></li>
+        <li><a href="<?= base_url('shows'); ?>">Shows</a></li>
+        <li><a href="<?= base_url('LoginC')?>"> <button class="iniciar-sesion">Iniciar Sesion</button> </a> </li>
+        <li><button class="crear-cuenta">Registrarse</button></li>
     </ul>
 </nav>
