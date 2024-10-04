@@ -16,7 +16,7 @@
                 <div class="col-md-4">
                     <h3 class="panel-title colorN">Ingrese con su usuario</h3>
                     <div class="panel-body">
-                        <form action="<?= base_url(); ?>Iniciar/ValidaUsuario" method="POST">                              
+                        <form action="<?= base_url(); ?>LoginC/ValidaUsuario" method="POST">                              
                             <p>Ingrese su Usuario</p>  <input type="text" placeholder="Email" autofocus name="usuario" class="form-control" required="" autocomplete="off">
                             <p>Ingrese su Clave</p>  <input type="password" placeholder="Contraseña" name="clave" class="form-control"   required="" autocomplete="off">
                             <hr/>

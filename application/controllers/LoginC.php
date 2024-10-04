@@ -24,38 +24,28 @@ class LoginC extends CI_Controller {
            
             
            
-            $this->load->model('ModeloLogueo');
-            $valido=$this->ModeloLogueo->valIngreso($usuario,$pass);
+            $this->load->model('LoginM');
+            $usuario=$this->LoginM->valIngreso($usuario,$pass);
             
-           
-            if($valido != null){
-            //var_dump($valido); /*esta funcion nos muestra todo lo que tiene la variable $valido */
-                $this->load->view('principal/cabecera');
-                $this->load->view('principal/bienvenida');
-              
-                
+            
+            if($usuario != null){
+                //if($usuario->$esAdmin == 0){
+                    $this->load->view('componentes/navbarRegistrado', array('user' => $usuario));
+                    $this->load->view('inicio');
+                //}
+                //else{
+                 //   $this->load->view('componentes/navbar');
+                 //   $this->load->view('componentes/inicio');
+                 //   echo("ESTAS EN ADMIN");
+                    //abrir admin vista
+                //}   
             }
             else {               
                 $dato['conforme']="Clave y usuario incorrectos";
-            $this->load->view('login/LoginView',$dato);
+                $this->load->view('login/LoginView',$dato);
             }
             
-        }
-        //las funciones funcClientes y fucnArticulos, están para que 
-        //desde el nav se pueda abrir otra vista
-        public function funcClientes(){
-
-            $this->load->view('principal/home');
-
-        }
-
-        public function funcArticulos(){
-            $this->load->view('principal/cabecera');
-
-            $this->load->view('principal/articulos');
-
-        }
-       
-        }
+        }       
+    }
         
 

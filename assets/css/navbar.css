@@ -24,6 +24,11 @@
     color: #fff;
 }
 
+.letra-negra a{
+    color: #000;
+}
+
+
 .navbar button {
     padding: 5px;
     border-radius: 25px;

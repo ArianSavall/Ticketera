@@ -1,6 +1,6 @@
 <?php
 
-class ModeloLogueo extends CI_Model {
+class LoginM extends CI_Model {
 
  
 
@@ -18,10 +18,11 @@ class ModeloLogueo extends CI_Model {
 //    }
 
 function valIngreso($usuario,$pass){        
-    $consulta = $this->db->query("SELECT usuario,pass FROM user  WHERE usuario = '" . $usuario. "' and pass='" . $pass."'");
+    $consulta = $this->db->query("SELECT email, pass, esAdmin, nombre FROM user  
+                                    WHERE email = '" . $usuario. "' and pass='" . $pass."'");
     
     if ($consulta->num_rows() == 1) {       
-        return $consulta->row();  
+        return $consulta->row();
     }else {
         return false;
     }
