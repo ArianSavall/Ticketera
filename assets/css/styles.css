@@ -1,0 +1,33 @@
+:root {
+    --rojo: rgb(160, 48, 48);
+  }
+  
+
+/* NavBar */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 991px) {
+    .sidebar {
+        background-color: rgb(151, 43, 43, 0.5);
+        backdrop-filter: blur(10px);
+    }
+}
+
+/* Hero */
+.hero {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero .letter-spacing {
+    letter-spacing: 2px;
+}
+
+.fondo {
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+}

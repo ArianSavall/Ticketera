@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/navbar.css'); ?>">
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/footer.css'); ?>">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/styles.css'); ?>">
+    <title>Shows</title>
 </head>
-<body>
-    hola
+
+<body data-bs-theme="dark">
+    <div class="fondo min-vh-100" style="background-image: url('<?php echo base_url("assets/imagenes/fondo-shows.jpg"); ?>');">
+        <section class="container my-5 pt-5">
+            <div class="row">
+                <?php foreach ($shows as $show): ?>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4">
+                        <div class="card" style="width: 20rem;">
+                            <img src="<?php echo base_url('assets/imagenes/' . $show->imagen) ?>" class="card-img-top" style="width: 100%; height: 13rem;" alt="imagen del show">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $show->nombre; ?></h5>
+                                <h6 class="card-subtitle mb-2 text-body-secondary"><?php echo $show->fecha; ?></h6>
+                                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                                <div class="d-flex justify-content-between">
+                                    <a href="#" class="btn" style="background-color: var(--rojo);">Más Info</a>
+                                    <a href="#" class="btn text-dark bg-white">Comprar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </section>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -6,9 +6,9 @@ class LoginC extends CI_Controller {
 	public function index()
 	{
         
-           $dato['conforme'] ="";
-        
-        $this->load->view('componentes/navbar');
+        $dato['conforme'] ="";
+        $data['current_page'] = 'login';
+        $this->load->view('componentes/navbar', $data);
 		$this->load->view('login/LoginView',$dato);
 	}
         

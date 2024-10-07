@@ -1,18 +1,48 @@
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">UNLA Arena</a>
+    <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header text-white border-bottom">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
+        <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
+        <ul class="navbar-nav justify-content-center align-items-center flex-grow-1 pe-3">
+          <li class="nav-item mx-2">
+            <a class="nav-link <?php echo ($current_page == 'home') ? 'active' : ''; ?>" aria-current="<?php echo ($current_page == 'home') ? 'page' : 'false'; ?>" href="<?php echo base_url('home'); ?>">Inicio</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link <?php echo ($current_page == 'shows') ? 'active' : ''; ?>" aria-current="<?php echo ($current_page == 'shows') ? 'page' : 'false'; ?>" href="<?php echo base_url('shows'); ?>">Shows</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#">Como Llegar</a>
+          </li>
+        </ul>
+        <!-- <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Nombre Usuario
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Mis Compras</a></li>
+                          <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                      </ul>
+                    </li>
+                </ul> -->
 
-
-<nav class="navbar">
-    <ul class="navbar-logo">
-        <p> 
-          <a href="<?= base_url('home'); ?>"> 
-            <img src= "<?= base_url()?>assets/Imagenes/logo" alt="UNLA ARENA LOGO"   width="100" height="100">
-          </a>
-
-        </p>
-    </ul>
-    <ul class="navbar-links">
-        <li><a href="<?= base_url('home'); ?>">Inicio</a></li>
-        <li><a href="<?= base_url('shows'); ?>">Shows</a></li>
-        <li><a href="<?= base_url('LoginC')?>"> <button class="iniciar-sesion">Iniciar Sesion</button> </a> </li>
-        <li><button class="crear-cuenta">Registrarse</button></li>
-    </ul>
+        <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
+          <a href="<?php echo base_url('loginC') ?>" class="text-white">Iniciar Sesion</a>
+          <a href="#" class="text-white text-decoration-none px-3 py-1 rounded-4" style="background-color: var(--rojo)">Registrarse</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </nav>

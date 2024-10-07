@@ -20,8 +20,8 @@ class Home extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('componentes/navbar'); 
+		$data['current_page'] = 'home';
+		$this->load->view('componentes/navbar', $data); 
 		$this->load->view('inicio');
-		$this->load->view('componentes/footer'); 
 	}
 }
