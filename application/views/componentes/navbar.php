@@ -35,7 +35,7 @@
                         <li><a class="dropdown-item" href="#">Mis Compras</a></li>
                           <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href= <?=base_url('LogoutC/cerrarSesion')?>>Cerrar Sesión</a></li>
+                        <li><a class="dropdown-item" href= <?=base_url('LogoutC')?>>Cerrar Sesión</a></li>
                       </ul>
                     </li>
                 </ul>

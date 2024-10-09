@@ -14,11 +14,12 @@
             <div class="row">
                 <div class="col-md-4">
                 </div>
-                
                 <div class="col-md-4 mt-5 ">
-                    <div class="alert alert-danger">
-                        <?=$conforme?> 
-                    </div>
+                    <?php if($conforme != '') :?>
+                        <div class="alert alert-danger">
+                            <?=$conforme?> 
+                        </div>
+                    <?php endif; ?>
                     <div class="px-3 py-3 bg-dark"> 
                         <h3 class="card-title colorN mb-4 mt-3">Ingresá a tu cuenta</h3>
                         <div class="panel-body">
