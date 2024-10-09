@@ -24,24 +24,27 @@
             <a class="nav-link" href="#">Como Llegar</a>
           </li>
         </ul>
-        <!-- <ul class="navbar-nav ms-auto">
+        <?php 
+          if($this->session->has_userdata('nombre')) : ?>
+            <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Nombre Usuario
+                        <?=$this->session->userdata('nombre')?>
                       </a>
                       <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Mis Compras</a></li>
                           <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                        <li><a class="dropdown-item" href= <?=base_url('LogoutC/cerrarSesion')?>>Cerrar Sesión</a></li>
                       </ul>
                     </li>
-                </ul> -->
-
-        <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-          <a href="<?php echo base_url('loginC') ?>" class="text-white">Iniciar Sesion</a>
-          <a href="#" class="text-white text-decoration-none px-3 py-1 rounded-4" style="background-color: var(--rojo)">Registrarse</a>
-        </div>
+                </ul>
+          <?php else : ?>
+              <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
+                <a href="<?php echo base_url('loginC') ?>" class="text-white">Iniciar Sesion</a>
+                <a href="#" class="text-white text-decoration-none px-3 py-1 rounded-4" style="background-color: var(--rojo)">Registrarse</a>
+              </div>
+        <?php endif;?>  
       </div>
     </div>
   </div>

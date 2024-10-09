@@ -14,22 +14,28 @@
             <div class="row">
                 <div class="col-md-4">
                 </div>
-                <div class="col-md-4 mt-5 bg-dark">
-                    <h3 class="card-title colorN mb-4 mt-3">Ingresá a tu cuenta</h3>
-                    <div class="panel-body">
-                        <form>
-                            <div class="mb-3">
-                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Correo Electrónico" aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
-                            </div>
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Recordarme</label>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Ingresar</button>
-                            </form>
+                
+                <div class="col-md-4 mt-5 ">
+                    <div class="alert alert-danger">
+                        <?=$conforme?> 
+                    </div>
+                    <div class="px-3 py-3 bg-dark"> 
+                        <h3 class="card-title colorN mb-4 mt-3">Ingresá a tu cuenta</h3>
+                        <div class="panel-body">
+                            <form action="<?= base_url(); ?>LoginC/ValidaUsuario" method="POST">
+                                <div class="mb-3">
+                                    <input type="text" name="usuario" class="form-control" id="exampleInputEmail1" placeholder="Correo Electrónico">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="password" name="clave" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Recordarme</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Ingresar</button>
+                                </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -37,7 +43,7 @@
                 </div>
             </div>
         </div>       
-    <h1> <?php echo($conforme); ?> </h1>
+        
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
