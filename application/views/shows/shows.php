@@ -15,15 +15,14 @@
             <div class="row">
                 <?php foreach ($shows as $show): ?>
                     <div class="col-12 col-sm-6 col-md-4 col-lg-4 mb-4">
-                        <div class="card" style="width: 20rem;">
+                        <div class="card w-100">
                             <img src="<?php echo base_url('assets/imagenes/' . $show->imagen) ?>" class="card-img-top" style="width: 100%; height: 13rem;" alt="imagen del show">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $show->nombre; ?></h5>
                                 <h6 class="card-subtitle mb-2 text-body-secondary"><?php echo $show->fecha; ?></h6>
-                                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
                                 <div class="d-flex justify-content-between">
-                                    <a href="#" class="btn" style="background-color: var(--rojo);">Más Info</a>
-                                    <a href="#" class="btn text-dark bg-white">Comprar</a>
+                                    <a href="<?php echo base_url('shows/show/') . $show->id; ?>" class="btn" style="background-color: var(--rojo);">Más Info</a>
+                                    <a href="<?php echo base_url('shows/show/') . $show->id; ?>" class="btn text-dark bg-white">Comprar</a>
                                 </div>
                             </div>
                         </div>

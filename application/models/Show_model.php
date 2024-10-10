@@ -13,4 +13,10 @@ class Show_model extends CI_Model {
         $query = $this->db->get('shows');
         return $query->result();
     }
+
+    public function get_show_by_id($id)
+    {
+        $query = $this->db->get_where('shows', ['id' => $id]);
+        return $query->row();
+    }
 }
