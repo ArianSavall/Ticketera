@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#">UNLA Arena</a>
+    <a class="navbar-brand" href= <?=base_url();?>> UNLA ARENA </a>
     <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,7 +10,8 @@
         <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
-        <ul class="navbar-nav justify-content-center align-items-center flex-grow-1 pe-3">
+        <ul class="navbar-nav justify-content-center align-items-center flex-grow-1
+        - pe-3">
           <li class="nav-item mx-2">
             <a class="nav-link <?php echo ($current_page == 'home') ? 'active' : ''; ?>" aria-current="<?php echo ($current_page == 'home') ? 'page' : 'false'; ?>" href="<?php echo base_url('home'); ?>">Inicio</a>
           </li>
@@ -41,8 +42,8 @@
                 </ul>
           <?php else : ?>
               <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
-                <a href="<?php echo base_url('loginC') ?>" class="text-white">Iniciar Sesion</a>
-                <a href="#" class="text-white text-decoration-none px-3 py-1 rounded-4" style="background-color: var(--rojo)">Registrarse</a>
+                <a href="<?= base_url('loginC') ?>" class="text-white">Iniciar Sesion</a>
+                <a href="<?= base_url('RegisterC') ?>" class="text-white text-decoration-none px-3 py-1 rounded-4" style="background-color: var(--rojo)">Registrarse</a>
               </div>
         <?php endif;?>  
       </div>

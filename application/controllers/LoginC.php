@@ -7,7 +7,6 @@ class LoginC extends CI_Controller {
             
             $dato['conforme'] ="";
             $data['current_page'] = 'login';
-            $data['sesion'] = $this->session;
 
             $this->load->view('componentes/navbar', $data);
             $this->load->view('login/LoginView',$dato);
