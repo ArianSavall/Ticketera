@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
-    <a class="navbar-brand" href= <?=base_url();?>> UNLA ARENA </a>
+    <a class="navbar-brand" href="<?php echo base_url('home') ?>">UNLA Arena</a>
     <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
