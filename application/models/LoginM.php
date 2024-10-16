@@ -18,8 +18,8 @@ class LoginM extends CI_Model {
 //    }
 
 function valIngreso($usuario,$pass){        
-    $consulta = $this->db->query("SELECT email, pass, esAdmin, nombre FROM user  
-                                    WHERE email = '" . $usuario. "' and pass='" . $pass."'");
+    $consulta = $this->db->query("SELECT email, password, esAdmin, nombre FROM user  
+                                    WHERE email = '" . $usuario. "' and password ='" . $pass."'");
     
     if ($consulta->num_rows() == 1) {       
         return $consulta->row();
