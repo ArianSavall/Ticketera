@@ -13,7 +13,7 @@
               <h2 class="text-uppercase text-center mb-4">¡Registro Exitoso!</h2>
 
               <p> <a href="<?= base_url('loginC') ?>"
-                    class="fw-bold text-body text-center"><u>       Ingresá con tu cuenta</u></a></p>
+                    class="fw-bold text-body text-center"><u>Ingresá con tu cuenta</u></a></p>
             </div>
           </div>     
         

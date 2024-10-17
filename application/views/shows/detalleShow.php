@@ -10,8 +10,18 @@
 </head>
 
 <body class="fondo" data-bs-theme="dark" style="background-image: url('<?php echo base_url("assets/imagenes/fondo-detalle-show.jpg"); ?>');">
-    <div class="d-flex align-items-center justify-content-center mt-5">
-        <div class="w-75 h-75 bg-dark mt-5 d-flex flex-column rounded p-3 align-items-center justify-content-center text-center">
+    <div class="d-flex flex-column align-items-center justify-content-center">
+        
+        <div class="mt-5">
+            <?php if($errormsg != '') :?>
+                    <div class="alert alert-danger mt-5">
+                        <?=$errormsg?> 
+                    </div>
+            <?php endif; ?>
+
+        </div>
+
+        <div class="w-75 h-75 bg-dark d-flex flex-column rounded p-3 align-items-center justify-content-center text-center">
             <h1 class="mb-4"><?php echo $show->nombre; ?></h1>
             <p><?php echo $show->descripcion; ?></p>
             
@@ -24,8 +34,23 @@
                     <p>Precio: $<?php echo $show->precio_entradas; ?></p>
 
                     <div class="d-flex align-items-center">
-                        <input type="number" id="cantidadEntradas" name="cantidad" class="form-control me-2" value="1" min="1" max="10" style="width: 5rem; text-align: center;">
-                        <a href="#" class="btn bg-light text-dark">Comprar</a>
+                        <form action=<?= base_url().'Shows/ValidarSesion/'.$show->id?> method="POST">
+                            <div>
+                                <input type="number" id="cantidadEntradas" name="cantidad" class="form-control me-2" value="1" min="1" max=<?=$show->cant_entradas_disponibles?> style="width: 5rem; text-align: center;">
+                            </div>
+                            <div>
+                                <!--<?php if($this->session->has_userdata('nombre')) : ?>
+                                    <a href=<?= base_url('CompraC/compraExitosa/'.$show->id)?> class="btn bg-light text-dark">Comprar</a>
+                                <?php else : ?>
+                                    <a href=<?= base_url('Shows/faltaIniciarSesion/' . $show->id)?> class="btn bg-light text-dark">Comprar</a>
+                                <?php endif;?>!-->
+                                
+                                <button  type="submit" class="btn bg-light text-dark">Comprar</button>
+
+                            </div>
+                            
+                        </form>
+                        
                     </div>
 
                     <p class="mt-2">Total: </p>
