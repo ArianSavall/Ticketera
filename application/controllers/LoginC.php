@@ -20,7 +20,6 @@ class LoginC extends CI_Controller {
             
             $pass = filter_input(INPUT_POST, 'clave', FILTER_SANITIZE_SPECIAL_CHARS);
            
-            /*levanto el model ModeloPrueba y uso su function valIngreso pasandole los parametros usuario y clave recibidos de la vista*/
            
             
            

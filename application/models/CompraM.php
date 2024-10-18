@@ -17,6 +17,15 @@ class CompraM extends CI_Model {
         
     }
 
+    public function get_compras_by_email_usuario($email){
+        $this->db->select('*');
+        $this->db->from('compra');
+        $this->db->where('email_usuario', $email);
+        $this->db->join('shows', 'shows.id = compra.id_espectaculo');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     public function get_all_compras()
     {
         $query = $this->db->get('compra');
