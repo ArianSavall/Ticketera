@@ -34,9 +34,7 @@ class Shows extends CI_Controller {
             'show' => $show,
             'errormsg' => ''
         ];
-        
-        $this->session->set_flashdata('showData', $data);
-
+    
         $this->load->view('componentes/navbar', $data);
         $this->load->view('shows/detalleShow', $data);
     }
@@ -57,12 +55,20 @@ class Shows extends CI_Controller {
         
         $this->load->model('CompraM');
         $this->load->model('Show_model');
+
         if($this->CompraM->insert_compra($this->session->userdata('email'), $idShow, $cantEntradas) == 0){
             $this->Show_model->restar_entradas($idShow, $cantEntradas);
-
+            
             $this->load->view('componentes/navbar', $data);
             $this->load->view('shows/compra_exitosa', $data);
+        }else{
+            $data['current_page'] = 'detalle_show';
+            $data['errormsg'] = 'Hubo un error en la compra';
+
+            $this->load->view('componentes/navbar', $data);
+            $this->load->view('shows/detalleShow', $data);
         }
+        
     }
 
     public function faltaIniciarSesion($id)
