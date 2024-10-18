@@ -10,7 +10,7 @@
 </head>
 
 <body class="fondo" data-bs-theme="dark" style="background-image: url('<?php echo base_url("assets/imagenes/fondo-detalle-show.jpg"); ?>');">
-    <div class="d-flex flex-column align-items-center justify-content-center">
+    <div class="d-flex flex-column align-items-center justify-content-center mt-5">
         
         <div class="mt-5">
             <?php if($errormsg != '') :?>
@@ -33,18 +33,17 @@
                     <p>Fecha: <?php echo $show->fecha; ?></p>
                     <p>Precio: $<?php echo $show->precio_entradas; ?></p>
 
-                    <div class="d-flex align-items-center">
-                        <form action=<?= base_url().'Shows/ValidarSesion/'.$show->id?> method="POST">
-                            <div>
-                                <input type="number" id="cantidadEntradas" name="cantidad" class="form-control me-2" value="1" min="1" max=<?=$show->cant_entradas_disponibles?> style="width: 5rem; text-align: center;">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <form action="<?= base_url().'Shows/ValidarSesion/'.$show->id?>" method="POST" class="d-flex align-items-center">
+                            <div class="me-2">
+                                <input type="number" id="cantidadEntradas" name="cantidad" class="form-control" value="1" min="1" max="<?=$show->cant_entradas_disponibles?>" style="width: 5rem; text-align: center;">
                             </div>
                             <div>        
-                                <button  type="submit" class="btn bg-light text-dark">Comprar</button>
+                                <button type="submit" class="btn bg-light text-dark">Comprar</button>
                             </div>
-                            
                         </form>
-                        
                     </div>
+
 
                     <p class="mt-2">Total: </p>
                 </div>
