@@ -12,6 +12,7 @@
         <div class="card" style="border-radius: 15px;">
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-4">Compra exitosa!!!</h2>
+              <h3><?= $emailEnviado?></h3>
               <form action="<?= base_url()?>Home" method="POST">
                 <div class="d-flex justify-content-center">
                   <button  type="submit" data-mdb-button-init
