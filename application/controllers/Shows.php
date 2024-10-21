@@ -58,15 +58,19 @@ class Shows extends CI_Controller {
 
         if($this->CompraM->insert_compra($this->session->userdata('email'), $idShow, $cantEntradas) == 0){
             $this->Show_model->restar_entradas($idShow, $cantEntradas);
-            
+            $showComprado = $this->Show_model->get_show_by_id($idShow);
             $this->email->from('unlaarena@gmail.com', 'UNLA ARENA');
-            $this->email->to('savallarian45@gmail.com');
+            $this->email->to($this->session->userdata('email'));
 
             $this->email->subject('Detalles de tu compra');
-            $this->email->message('Espectáculo: Maria Becerra \r\n Usuario: userRandom');
+            $emailMessage = "Estimado, le enviamos los detalles de su compra: " . "<br />\n";
+            $emailMessage .= "Nombre del show: ". $showComprado->nombre. "<br />\n";
+            $emailMessage .= "Usuario: ". $this->session->userdata('nombre') . "<br />\n";
+            $emailMessage .= "Cantidad de entradas compradas: ". $cantEntradas;
+            $this->email->message($emailMessage);
 
             if($this->email->send()){
-                $data['emailEnviado'] = 'EMAIL ENVIADO!!';
+                $data['emailEnviado'] = '';
             }else{
                 $data['emailEnviado'] = 'NO SE ENVIO :(';
                 show_error($this->email->print_debugger());             
