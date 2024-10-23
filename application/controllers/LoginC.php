@@ -41,14 +41,14 @@ class LoginC extends CI_Controller {
                 $this->session->set_userdata($datosSesion);
 
                 $this->load->view('componentes/navbar', $data);
-                $this->load->view('inicio');
-                //}
-                //else{//abrir admin vista
-                    //$this->load->view('componentes/navbar');
-                    //$this->load->view('componentes/inicio');
-                    //echo("ESTAS EN ADMIN");
-                    
-                //}   
+
+                if ($usuario->esAdmin == 1) {
+                   redirect('shows');
+                } else {
+                    $this->load->view('inicio');
+                }
+
+                
             }
             else {               
                 $dato['conforme']="Clave y usuario incorrectos";

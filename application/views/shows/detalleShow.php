@@ -43,9 +43,6 @@
                             </div>
                         </form>
                     </div>
-
-
-                    <p class="mt-2">Total: </p>
                 </div>
             </div>
         </div>

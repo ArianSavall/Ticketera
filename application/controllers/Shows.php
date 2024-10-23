@@ -17,7 +17,13 @@ class Shows extends CI_Controller {
         ];
 
         $this->load->view('componentes/navbar', $data);
-        $this->load->view('shows/shows');
+
+        if($this->session->userdata('esAdmin')) {
+            $this->load->view('admin/inicioAdmin', $data);
+        } else {
+            $this->load->view('shows/shows', $data);
+        }     
+
     }
 
     // muestra el detalle de un solo show

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="<?php echo base_url('home') ?>">UNLA Arena</a>
+    <a class="navbar-brand">UNLA Arena</a>
     <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,34 +12,62 @@
       <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
         <ul class="navbar-nav justify-content-center align-items-center flex-grow-1
         - pe-3">
-          <li class="nav-item mx-2">
-            <a class="nav-link <?php echo ($current_page == 'home') ? 'active' : ''; ?>" aria-current="<?php echo ($current_page == 'home') ? 'page' : 'false'; ?>" href="<?php echo base_url('home'); ?>">Inicio</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link <?php echo ($current_page == 'shows') ? 'active' : ''; ?>" aria-current="<?php echo ($current_page == 'shows') ? 'page' : 'false'; ?>" href="<?php echo base_url('shows'); ?>">Shows</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="#">Contacto</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="#">Como Llegar</a>
-          </li>
+          <?php if($this->session->userdata('esAdmin')): ?>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="<?php echo base_url('shows');?>">Shows</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="<?php echo base_url('usuario');?>">Usuarios</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="<?php echo base_url('MisComprasC/listar_compras');?>">Ventas</a>
+            </li>
         </ul>
+        <?php else: ?>
+          <ul class="navbar-nav justify-content-center align-items-center flex-grow-1
+        - pe-3">
+            <li class="nav-item mx-2">
+                <a class="nav-link <?php echo ($current_page == 'home') ? 'active' : ''; ?>" aria-current="<?php echo ($current_page == 'home') ? 'page' : 'false'; ?>" href="<?php echo base_url('home'); ?>">Inicio</a>
+              </li>
+              <li class="nav-item mx-2">
+                <a class="nav-link <?php echo ($current_page == 'shows') ? 'active' : ''; ?>" aria-current="<?php echo ($current_page == 'shows') ? 'page' : 'false'; ?>" href="<?php echo base_url('shows'); ?>">Shows</a>
+              </li>
+              <li class="nav-item mx-2">
+                <a class="nav-link" href="#">Contacto</a>
+              </li>
+              <li class="nav-item mx-2">
+                <a class="nav-link" href="#">Como Llegar</a>
+              </li>
+        </ul>
+        <?php endif; ?>
         <?php 
-          if($this->session->has_userdata('nombre')) : ?>
-            <ul class="navbar-nav ms-auto">
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <?=$this->session->userdata('nombre')?>
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="<?=base_url('MisComprasC') ?>">Mis Compras</a></li>
-                          <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href= <?=base_url('LogoutC')?>>Cerrar Sesión</a></li>
-                      </ul>
-                    </li>
-                </ul>
+          if($this->session->has_userdata('nombre')) : 
+            if($this->session->userdata('esAdmin')): ?>
+              <!-- NavBar de administadores  -->
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href= <?=base_url('LogoutC')?>>Cerrar Sesión</a></li>
+                    </ul>
+                </li>
+              </ul>
+            <?php else: ?>  
+              <!-- Navbar para usuarios regulares -->
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <?=$this->session->userdata('nombre')?>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="<?=base_url('MisComprasC') ?>">Mis Compras</a></li>
+                        <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" href= <?=base_url('LogoutC')?>>Cerrar Sesión</a></li>
+                    </ul>
+                  </li>
+              </ul>
+            <?php endif; ?>
           <?php else : ?>
               <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
                 <a href="<?= base_url('loginC') ?>" class="text-white">Iniciar Sesion</a>
