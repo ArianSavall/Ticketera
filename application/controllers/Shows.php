@@ -59,6 +59,8 @@ class Shows extends CI_Controller {
     }
 
     public function delete($id) {
+        $this->load->model('CompraM');
+        $this->CompraM->delete_compras_by_espectaculo($id);
         $this->show_model->delete_show_by_id($id);
         redirect('shows');
     }
@@ -87,7 +89,6 @@ class Shows extends CI_Controller {
     
         // Preparar los datos para guardar en la base de datos
         $show_data = [
-            'id' => $this->input->post('idShow'),
             'nombre' => $this->input->post('nombreShow'),
             'fecha' => $this->input->post('fechaShow'),
             'imagen' => $image_path, // Guardar la ruta de la imagen

@@ -14,6 +14,7 @@
             <table class="table mt-5 table-bordered">
             <thead class="text-center align-middle">
                 <tr>
+                    <th scope="col">ID</th>
                     <th scope="col">Email</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Acciones</th>
@@ -21,19 +22,28 @@
             </thead>
             <tbody class="table-group-divider text-center align-middle">
                 <?php foreach($users as $user): ?>
-                    <tr>
-                        <td><?php echo $user->email ?></td>
-                        <td><?php echo $user->nombre ?></td>
-                        <td>
-                            <div class="d-flex flex-column justify-content-center align-items-center" style="gap: 5px;">
-                                <a href="#" class="btn btn-primary mt-2">Ver Compras</a>
-                                <a href="#" class="btn btn-warning">Editar</a>
-                                <form action="" method="POST" >
-                                     <button class="btn btn-danger" type="submit">Eliminar</button>
-                                </form>
-                            </div>
-                        </td>
-                    </tr>
+                        <tr>
+                            <?php if($user->esAdmin == 0) :?>
+                            <td><?php echo $user->id_user ?></td>
+                            <td><?php echo $user->email ?></td>
+                            <td><?php echo $user->nombre ?></td>
+                            <?php else :?>
+                            <td style="color: green;"><?php echo $user->id_user ?></td>
+                            <td style="color: green;"><?php echo $user->email ?></td>
+                            <td style="color: green;"><?php echo $user->nombre ?></td>
+                            <?php endif; ?>
+                            <td>
+                                <?php if($user->esAdmin == 0) :?>
+                                <div class="d-flex flex-column justify-content-center align-items-center" style="gap: 5px;">
+                                    <a href="#" class="btn btn-primary mt-2">Ver Compras</a>
+                                    <a href="#" class="btn btn-warning">Editar</a>
+                                    <form action="" method="POST" >
+                                        <button class="btn btn-danger" type="submit">Eliminar</button>
+                                    </form>
+                                </div>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
                 <?php endforeach; ?>
             </tbody>
             </table>

@@ -12,32 +12,28 @@
         <h1>Crear Show</h1>
         <form action="<?php echo base_url('shows/store') ?>" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
-                <label for="idShow" class="form-label">ID: </S></label>
-                <input type="text" class="form-control" id="idShow" name="idShow">
-            </div>
-            <div class="mb-3">
                 <label for="nombreShow" class="form-label">Nombre: </S></label>
-                <input type="text" class="form-control" id="nombreShow" name="nombreShow">
+                <input type="text" class="form-control" id="nombreShow" name="nombreShow" required>
             </div>
             <div class="mb-3">
                 <label for="fechaShow" class="form-label">Fecha: </label>
-                <input type="date" class="form-control" id="fechaShow" name="fechaShow">
+                <input type="date" class="form-control" id="fechaShow" name="fechaShow" required>
             </div>
             <div class="mb-3">
                 <label for="imagenShow" class="form-label">Seleccione una imagen: </label>
-                <input type="file" class="form-control" id="imagenShow" name="imagenShow">
+                <input type="file" class="form-control" id="imagenShow" name="imagenShow" required>
             </div>
             <div class="mb-3">
                 <label for="cantEntradasShow" class="form-label">Cantidad de entradas disponibles: </label>
-                <input type="number" min="1" class="form-control" id="cantEntradasShow" name="cantEntradasShow">
+                <input type="number" min="1" class="form-control" id="cantEntradasShow" name="cantEntradasShow" required>
             </div>
             <div class="mb-3">
                 <label for="precioEntradasShow" class="form-label">Precio de las entradas: </label>
-                <input type="number" min="1" class="form-control" id="precioEntradasShow" name="precioEntradasShow">
+                <input type="number" min="1" class="form-control" id="precioEntradasShow" name="precioEntradasShow" required>
             </div>
             <div class="mb-3">
                 <label for="descripcionShow" class="form-label">Descripcion: </label>
-                <textarea name="descripcionShow" id="descripcionShow" class="form-control" style="resize: none;"></textarea>
+                <textarea name="descripcionShow" id="descripcionShow" class="form-control" style="resize: none;" required></textarea>
             </div>
            
            
