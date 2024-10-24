@@ -29,16 +29,24 @@
                     <tr>
                         <th scope="row"><?php echo $show->id ?></th>
                         <td><?php echo $show->nombre ?></td>
-                        <td><img src="<?php echo base_url('assets/imagenes/' . $show->imagen) ?>" alt="imagen del show" style="max-height: 5rem;"></td>
+                        <td><img src="<?php echo $show->imagen ?>" alt="imagen del show" style="max-height: 5rem;"></td>
                         <td><?php echo $show->fecha ?></td>
                         <td><?php echo$show->cant_entradas_disponibles ?></td>
                         <td><?php echo $show->precio_entradas ?></td>
                         <td><?php echo $show->descripcion ?></td>
-                        <td><a href="#" class="m-1">Editar</a><a href="#" class="m-1">Eliminar</a></td>
+                        <td>
+                            <div class="d-flex flex-column">
+                                <a href="#" class="btn btn-primary my-2">Editar</a>
+                                <form action="<?php echo base_url('shows/delete/') . $show->id ?>" method="POST" >
+                                    <button class="btn btn-danger" type="submit">Eliminar</button>
+                                </form>
+                            </div>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
             </table>
+            <a href="<?php echo base_url('shows/create') ?>" class="btn btn-success mt-4 fw-bold p-3" style="text-transform: uppercase;">Crear Nuevo Show</a>
         </div>
     </div>
 

@@ -53,6 +53,56 @@ class Shows extends CI_Controller {
         }
     }
 
+    public function create() {
+        $this->load->view('componentes/navbar');
+        $this->load->view('shows/create');
+    }
+
+    public function delete($id) {
+        $this->show_model->delete_show_by_id($id);
+        redirect('shows');
+    }
+
+    public function store() {
+        // Configuración para la subida de archivos
+        $config['upload_path'] = './assets/imagenes/shows/'; // Ruta del servidor donde se guardan los ficheros
+        $config['allowed_types'] = 'gif|jpg|png'; // Tipos de archivos permitidos
+        $config['max_size'] = 2048; // Tamaño máximo (en KB)
+    
+        // Cargar la librería de subida
+        $this->load->library('upload', $config);
+    
+        // Verificar si el archivo se subió correctamente
+        if ($this->upload->do_upload('imagenShow')) {
+            // Obtener los datos del archivo subido
+            $upload_data = $this->upload->data();
+            $image_path = 'assets/imagenes/shows/' . $upload_data['file_name']; // Ruta de la imagen para almacenar en la BD
+        } else {
+            // Mostrar error en caso de que la subida falle
+            $error = $this->upload->display_errors();
+            // Podrías manejar el error aquí, por ejemplo redireccionar o mostrar un mensaje
+            echo $error;
+            return;
+        }
+    
+        // Preparar los datos para guardar en la base de datos
+        $show_data = [
+            'id' => $this->input->post('idShow'),
+            'nombre' => $this->input->post('nombreShow'),
+            'fecha' => $this->input->post('fechaShow'),
+            'imagen' => $image_path, // Guardar la ruta de la imagen
+            'cant_entradas_disponibles' => $this->input->post('cantEntradasShow'),
+            'precio_entradas' => $this->input->post('precioEntradasShow'),
+            'descripcion' => $this->input->post('descripcionShow')
+        ];
+    
+        // Guardar los datos en la base de datos utilizando el modelo
+        $this->show_model->add_new_show($show_data);
+    
+        // Redirigir a la página de listado de shows
+        redirect('shows');
+    }
+    
 
     public function compraExitosa($idShow){
         $data['current_page'] = 'compra_exitosa';

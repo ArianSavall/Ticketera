@@ -24,7 +24,15 @@
                     <tr>
                         <td><?php echo $user->email ?></td>
                         <td><?php echo $user->nombre ?></td>
-                        <td><a href="#" class="m-1">Editar</a><a href="#" class="m-1">Eliminar</a><a href="#" class="m-1">Ver Compras</a></td>
+                        <td>
+                            <div class="d-flex flex-column justify-content-center align-items-center" style="gap: 5px;">
+                                <a href="#" class="btn btn-primary mt-2">Ver Compras</a>
+                                <a href="#" class="btn btn-warning">Editar</a>
+                                <form action="" method="POST" >
+                                     <button class="btn btn-danger" type="submit">Eliminar</button>
+                                </form>
+                            </div>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

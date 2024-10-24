@@ -23,4 +23,14 @@ class Show_model extends CI_Model {
         $query = $this->db->get_where('shows', ['id' => $id]);
         return $query->row();
     }
+
+    public function delete_show_by_id($id)
+    {
+        $this->db->delete('shows', ['id' => $id]);
+    }
+
+    public function add_new_show($show_data)
+    {
+        $this->db->insert('shows', $show_data);
+    }
 }

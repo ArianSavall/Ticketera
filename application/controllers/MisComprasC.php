@@ -36,4 +36,5 @@ class MisComprasC extends CI_Controller {
         }
 
 	}
+
 }

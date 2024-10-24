@@ -18,6 +18,7 @@
                     <th scope="col">Usuario</th>
                     <th scope="col">Id Espectaculo</th>
                     <th scope="col">Cantidad entradas</th>
+                    <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody class="table-group-divider text-center align-middle">
@@ -27,6 +28,11 @@
                         <td><?php echo $compra->email_usuario ?></td>
                         <td><?php echo $compra->id_espectaculo ?></td>
                         <td><?php echo $compra->cant_entradas_compradas ?></td>
+                        <td>
+                            <form action="" method="POST" class="my-2">
+                                <button class="btn btn-danger m-auto" type="submit">Eliminar</button>
+                            </form>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
