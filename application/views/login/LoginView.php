@@ -25,12 +25,12 @@
 
               <form action="<?= base_url(); ?>LoginC/ValidaUsuario" method="POST">
                 <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="text" name="usuario" placeholder="Correo Electrónico" id="form3Example3cg" class="form-control form-control-lg" />
+                  <input type="text" name="usuario" placeholder="Correo Electrónico" id="form3Example3cg" class="form-control form-control-lg fs-6" />
                   <!--<label class="form-label" for="form3Example3cg">Your Email</label>-->
                 </div>
 
                 <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="password" name="clave" placeholder="Contraseña" id="form3Example4cg" class="form-control form-control-lg" />
+                  <input type="password" name="clave" placeholder="Contraseña" id="form3Example4cg" class="form-control form-control-lg fs-6" />
                   <!--<label class="form-label" for="form3Example4cg">Password</label>-->
                 </div>
 

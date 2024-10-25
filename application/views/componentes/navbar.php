@@ -19,10 +19,7 @@
             <a class="nav-link <?php echo ($current_page == 'shows') ? 'active' : ''; ?>" aria-current="<?php echo ($current_page == 'shows') ? 'page' : 'false'; ?>" href="<?php echo base_url('shows'); ?>">Shows</a>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link" href="#">Contacto</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="#">Como Llegar</a>
+            <a class="nav-link <?php echo ($current_page == 'comoLlegar') ? 'active' : ''; ?>" aria-current="<?php echo ($current_page == 'comoLlegar') ? 'page' : 'false'; ?>" href="<?php echo base_url('comoLlegar'); ?>">Como llegar</a>
           </li>
         </ul>
         <?php 
