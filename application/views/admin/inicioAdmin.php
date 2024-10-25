@@ -36,7 +36,7 @@
                         <td><?php echo $show->descripcion ?></td>
                         <td>
                             <div class="d-flex flex-column">
-                                <a href="#" class="btn btn-primary my-2">Editar</a>
+                                <a href="<?=base_url('Shows/edit/') . $show->id?>" class="btn btn-primary my-2">Editar</a>
                                 <form action="<?php echo base_url('shows/delete/') . $show->id ?>" method="POST" >
                                     <button class="btn btn-danger" type="submit">Eliminar</button>
                                 </form>

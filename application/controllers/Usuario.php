@@ -23,4 +23,5 @@ class Usuario extends CI_Controller {
 
     }
 
+    
 }

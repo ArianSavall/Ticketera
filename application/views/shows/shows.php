@@ -29,7 +29,7 @@
                                     <a href="<?php echo base_url('shows/show/') . $show->id; ?>" class="btn text-dark bg-white">Comprar</a>
                                 </div>
                                 <?php endif;?>
-                            </div>
+ s                           </div>
                         </div>
                     </div>
                 <?php endforeach; ?>

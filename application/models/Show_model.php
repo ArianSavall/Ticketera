@@ -33,4 +33,9 @@ class Show_model extends CI_Model {
     {
         $this->db->insert('shows', $show_data);
     }
+
+    public function update_show($id, $show_data){
+        $this->db->where('id', $id);
+        $this->db->update('shows', $show_data);
+    }
 }
