@@ -47,13 +47,29 @@ class Shows extends CI_Controller {
 
     public function validarSesion($idShow){
         if($this->session->has_userdata('nombre')){
-            $this->compraExitosa($idShow);
+            $this->confirmarCompra($idShow);
         }else{
             $this->faltaIniciarSesion($idShow);
         }
     }
 
+    public function confirmarCompra($id){
+        $show = $this->show_model->get_show_by_id($id);
+        $entradasCompradas = filter_input(INPUT_POST, 'cantidad', FILTER_SANITIZE_SPECIAL_CHARS);
+        $data = [
+            'current_page' => 'confirmar_compra',
+            'show' => $show,
+            'cant_entradas_compradas' => $entradasCompradas
+        ];
+        $this->session->set_flashdata('cant_entradas_compradas', $entradasCompradas);
+        $this->load->view('componentes/navbar',$data);
+        $this->load->view('shows/confirmar_compra', $data);
+    }
+
     public function create() {
+        $data = [
+            'current_page' => 'create'
+        ];
         $this->load->view('componentes/navbar');
         $this->load->view('shows/create');
     }
@@ -153,8 +169,7 @@ class Shows extends CI_Controller {
     public function compraExitosa($idShow){
         $data['current_page'] = 'compra_exitosa';
         $data['errormsg'] = '';
-        $cantEntradas = filter_input(INPUT_POST, 'cantidad', FILTER_SANITIZE_SPECIAL_CHARS);
-        
+        $cantEntradas = $this->session->flashdata('cant_entradas_compradas');
         $this->load->model('CompraM');
         $this->load->model('Show_model');
 

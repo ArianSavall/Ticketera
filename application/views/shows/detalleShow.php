@@ -26,7 +26,7 @@
             <p><?php echo $show->descripcion; ?></p>
             
             <div class="d-flex flex-column flex-lg-row my-4 align-items-center justify-content-center">
-                <img src="<?php echo base_url('assets/imagenes/') . $show->imagen; ?>" alt="foto del show" class="img-fluid rounded shadow mb-3 mb-lg-0" style="height: 16rem; width: 25rem;">
+                <img src="<?= base_url() . $show->imagen; ?>" alt="foto del show" class="img-fluid rounded shadow mb-3 mb-lg-0" style="height: 16rem; width: 25rem;">
 
                 <div class="rounded p-4 ms-3" style="background-color: var(--rojo);">
                     <p>UNLA Arena <a href="#">¿Cómo Llegar?</a></p>
