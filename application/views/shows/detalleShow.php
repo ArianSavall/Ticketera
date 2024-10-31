@@ -29,7 +29,7 @@
                 <img src="<?= base_url() . $show->imagen; ?>" alt="foto del show" class="img-fluid rounded shadow mb-3 mb-lg-0" style="height: 16rem; width: 25rem;">
 
                 <div class="rounded p-4 ms-3" style="background-color: var(--rojo);">
-                    <p>UNLA Arena <a href="#">¿Cómo Llegar?</a></p>
+                    <p>UNLA Arena <a href="<?php echo base_url('comoLlegar'); ?>">¿Cómo Llegar?</a></p>
                     <p>Fecha: <?php echo $show->fecha; ?></p>
                     <p>Precio: $<?php echo $show->precio_entradas; ?></p>
 

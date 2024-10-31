@@ -12,16 +12,15 @@
       <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
         <ul class="navbar-nav justify-content-center align-items-center flex-grow-1
         - pe-3">
-          <?php if($this->session->userdata('esAdmin')): ?>
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="<?php echo base_url('shows');?>">Shows</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="<?php echo base_url('usuario');?>">Usuarios</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="<?php echo base_url('MisComprasC/listar_compras');?>">Ventas</a>
-            </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link <?php echo ($current_page == 'home') ? 'active' : ''; ?>" aria-current="<?php echo ($current_page == 'home') ? 'page' : 'false'; ?>" href="<?php echo base_url('home'); ?>">Inicio</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link <?php echo ($current_page == 'shows') ? 'active' : ''; ?>" aria-current="<?php echo ($current_page == 'shows') ? 'page' : 'false'; ?>" href="<?php echo base_url('shows'); ?>">Shows</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link <?php echo ($current_page == 'comoLlegar') ? 'active' : ''; ?>" aria-current="<?php echo ($current_page == 'comoLlegar') ? 'page' : 'false'; ?>" href="<?php echo base_url('comoLlegar'); ?>">Como llegar</a>
+          </li>
         </ul>
         <?php else: ?>
           <ul class="navbar-nav justify-content-center align-items-center flex-grow-1
