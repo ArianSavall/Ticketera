@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/styles.css'); ?>">
-    <title>Crear show</title>
+    <title>Editar show</title>
 </head>
 <body class="fondo" style="background-image: url('<?php echo base_url("assets/imagenes/fondo.png"); ?>');" data-bs-theme="dark">
     <div class="container p-5 bg-dark rounded" style="width: 50%; margin-top: 100px; margin-bottom: 100px;">
-        <h1>Crear Show</h1>
+        <h1>Editar Show</h1>
         <form action="<?php echo base_url('shows/update/').$id ?>" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="nombreShow" class="form-label">Nombre nuevo: </S></label>
