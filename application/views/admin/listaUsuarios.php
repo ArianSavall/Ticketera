@@ -35,9 +35,9 @@
                             <td>
                                 <?php if($user->esAdmin == 0) :?>
                                 <div class="d-flex flex-column justify-content-center align-items-center" style="gap: 5px;">
-                                    <a href="#" class="btn btn-primary mt-2">Ver Compras</a>
-                                    <a href="#" class="btn btn-warning">Editar</a>
-                                    <form action="" method="POST" >
+                                    <!-- <a href="<?=base_url('MisComprasC') ?>" class="btn btn-primary mt-2">Ver Compras</a> -->
+                                    <a href="<?php echo base_url('Usuario/edit/') . $user->id_user ?>" class="btn btn-warning">Editar</a>
+                                    <form action="<?php echo base_url('usuario/delete/') . $user->id_user ?>" method="POST" >
                                         <button class="btn btn-danger" type="submit">Eliminar</button>
                                     </form>
                                 </div>
@@ -47,6 +47,7 @@
                 <?php endforeach; ?>
             </tbody>
             </table>
+            <a href="<?php echo base_url('usuario/create') ?>" class="btn btn-success mt-4 fw-bold p-3" style="text-transform: uppercase;">Crear Nuevo Usuario</a>
         </div>
     </div>
 

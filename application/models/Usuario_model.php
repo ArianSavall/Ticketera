@@ -14,4 +14,25 @@ class Usuario_model extends CI_Model {
         return $query->result();
     }
 
+    public function get_user_by_id($id)
+    {
+        $query = $this->db->get_where('user', ['id_user' => $id]);
+        return $query->row();
+    }
+
+    public function delete_user_by_id($id) 
+    {
+        $this->db->delete('user', ['id_user' => $id]);
+    }
+
+    public function add_new_user($user_data)
+    {
+        $this->db->insert('user', $user_data);
+    }
+
+    public function update_user($id, $user_data){
+        $this->db->where('id_user', $id);
+        $this->db->update('user', $user_data);
+    }
+
 }
