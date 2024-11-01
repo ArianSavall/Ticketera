@@ -35,7 +35,7 @@
                             <td>
                                 <?php if($user->esAdmin == 0) :?>
                                 <div class="d-flex flex-column justify-content-center align-items-center" style="gap: 5px;">
-                                    <!-- <a href="<?=base_url('MisComprasC') ?>" class="btn btn-primary mt-2">Ver Compras</a> -->
+                                    <a href="<?=base_url('MisComprasC/obtener_compras_usuario/') . $user->id_user ?>" class="btn btn-primary mt-2">Ver Compras</a>
                                     <a href="<?php echo base_url('Usuario/edit/') . $user->id_user ?>" class="btn btn-warning">Editar</a>
                                     <form action="<?php echo base_url('usuario/delete/') . $user->id_user ?>" method="POST" >
                                         <button class="btn btn-danger" type="submit">Eliminar</button>

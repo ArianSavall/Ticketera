@@ -20,6 +20,23 @@ class MisComprasC extends CI_Controller {
 		$this->load->view('login/MisCompras', $data);
 	}
 
+	public function obtener_compras_usuario($id){
+		$this->load->model('CompraM');
+		$this->load->model('Usuario_model');
+
+		$user = $this->Usuario_model->get_user_by_id($id);
+
+        $compras = $this->CompraM->get_compras_by_email_usuario($user->email);
+
+		$data = [
+			'current_page' => 'mis_compras',
+			'compras' => $compras	
+		];
+
+
+		$this->load->view('componentes/navbar', $data); 
+		$this->load->view('login/MisCompras', $data);
+	}
 	public function listar_compras() {
 		$this->load->model('CompraM');
 		

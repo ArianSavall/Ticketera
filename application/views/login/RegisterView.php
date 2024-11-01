@@ -25,22 +25,22 @@
               <form action="<?= base_url(); ?>RegisterC/registrarUsuario" method="POST">
 
                 <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="text" placeholder="Nombre de Usuario" name="nombre" id="form3Example1cg" class="form-control form-control-lg" required/>
+                  <input type="text" placeholder="Nombre de Usuario" name="nombre" id="form3Example1cg" class="form-control form-control-lg fs-6" required/>
                   <!--<label class="form-label" for="form3Example1cg">Nombre de usuario</label>-->
                 </div>
 
                 <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="text" placeholder="Correo Electrónico" name="email" id="form3Example3cg" class="form-control form-control-lg" required/>
+                  <input type="text" placeholder="Correo Electrónico" name="email" id="form3Example3cg" class="form-control form-control-lg fs-6" required/>
                   <!--<label class="form-label" for="form3Example3cg">Your Email</label>-->
                 </div>
 
                 <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="password" placeholder="Contraseña" name="password" id="form3Example4cg" class="form-control form-control-lg" required/>
+                  <input type="password" placeholder="Contraseña" name="password" id="form3Example4cg" class="form-control form-control-lg fs-6" required/>
                   <!--<label class="form-label" for="form3Example4cg">Password</label>-->
                 </div>
 
                 <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="password" placeholder="Repetir contraseña" name="passwordRepetida" id="form3Example4cdg" class="form-control form-control-lg" required/>
+                  <input type="password" placeholder="Repetir contraseña" name="passwordRepetida" id="form3Example4cdg" class="form-control form-control-lg fs-6" required/>
                   <!--<label class="form-label" for="form3Example4cdg">Repeat your password</label>-->
                 </div>
 

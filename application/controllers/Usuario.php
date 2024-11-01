@@ -32,10 +32,16 @@ class Usuario extends CI_Controller {
     }
 
     public function store() {
-          $usuario_data = [
+        $esAdmin = 0;
+        if($this->input->post('esAdmin') != null){
+            $esAdmin = $this->input->post('esAdmin');
+        }
+
+        $usuario_data = [
             'nombre' => $this->input->post('nombreUsuario'),
             'email' => $this->input->post('emailUsuario'),
             'password' => $this->input->post('passwordUsuario'),
+            'esAdmin' => $esAdmin
         ];
     
         $this->usuario_model->add_new_user($usuario_data);

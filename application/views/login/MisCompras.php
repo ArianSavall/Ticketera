@@ -15,7 +15,9 @@
         <th>Id</th>
         <th>Nombre Espectaculo</th>
         <th>Cantidad de entradas compradas</th>
+        <?php if(!($this->session->userdata('esAdmin'))) :?>
         <th></th>
+        <?php endif;?>
       </tr>
     </thead>
     <tbody>
@@ -30,11 +32,13 @@
                 <td>
                     <?=$compra->cant_entradas_compradas?>
                 </td>
+                <?php if(!($this->session->userdata('esAdmin'))) :?>
                 <td>
                     <a href="<?= base_url()?>Shows/show/<?=$compra->id_espectaculo?>">
                         <button  type="submit" class="btn btn-primary btn-block btn-lg gradient-custom-4 text-body">Info del show</button>
                     </a>
                 </td>
+                <?php endif;?>
             </tr>
         <?php endforeach; ?>
     </tbody>

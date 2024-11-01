@@ -16,7 +16,8 @@ class Usuario_model extends CI_Model {
 
     public function get_user_by_id($id)
     {
-        $query = $this->db->get_where('user', ['id_user' => $id]);
+        $query = $this->db->query("SELECT * FROM user  
+                                    WHERE id_user = " . $id. "");
         return $query->row();
     }
 
