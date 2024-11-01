@@ -18,29 +18,29 @@
 
     <body class="container d-flex flex-column justify-content-center vh-100 align-items-center" data-bs-theme="dark" 
         style="background-image: url('<?php echo base_url("assets/imagenes/fondo-login.jpg"); ?>'); background-repeat: no-repeat; background-size: cover; ">
-        <div class="card mt-5 style="border-radius: 15px;">
-            <div class="card-body p-5">
+        <div class="card mt-3" style="border-radius: 15px;">
+            <div class="card-body p-4">
               <h2 class="text-uppercase text-center mb-4">Registrarse</h2>
 
               <form action="<?= base_url(); ?>RegisterC/registrarUsuario" method="POST">
 
                 <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="text" placeholder="Nombre de Usuario" name="nombre" id="form3Example1cg" class="form-control form-control-lg fs-6" />
+                  <input type="text" placeholder="Nombre de Usuario" name="nombre" id="form3Example1cg" class="form-control form-control-lg" required/>
                   <!--<label class="form-label" for="form3Example1cg">Nombre de usuario</label>-->
                 </div>
 
                 <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="text" placeholder="Correo Electrónico" name="email" id="form3Example3cg" class="form-control form-control-lg fs-6" />
+                  <input type="text" placeholder="Correo Electrónico" name="email" id="form3Example3cg" class="form-control form-control-lg" required/>
                   <!--<label class="form-label" for="form3Example3cg">Your Email</label>-->
                 </div>
 
                 <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="password" placeholder="Contraseña" name="password" id="form3Example4cg" class="form-control form-control-lg fs-6" />
+                  <input type="password" placeholder="Contraseña" name="password" id="form3Example4cg" class="form-control form-control-lg" required/>
                   <!--<label class="form-label" for="form3Example4cg">Password</label>-->
                 </div>
 
                 <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="password" placeholder="Repetir contraseña" name="passwordRepetida" id="form3Example4cdg" class="form-control form-control-lg fs-6" />
+                  <input type="password" placeholder="Repetir contraseña" name="passwordRepetida" id="form3Example4cdg" class="form-control form-control-lg" required/>
                   <!--<label class="form-label" for="form3Example4cdg">Repeat your password</label>-->
                 </div>
 
